@@ -1,7 +1,7 @@
 import openai
 
 
-openai.api_key = "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"
+openai.api_key = "YOU_API_KEY"
 
 def ask():
     responce = openai.ChatCompletion.create(
