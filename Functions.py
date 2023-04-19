@@ -15,8 +15,6 @@ class ChatGPT:
         model="gpt-3.5-turbo",
         messages=self.Messages
         )
-
-        
         self.Messages.append({"role": "assistant", "content": responce["choices"][0]["message"]["content"]})
 
         return responce["choices"][0]["message"]["content"]
