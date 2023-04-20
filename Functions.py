@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "YOU_API_KEY"
+openai.api_key = "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"
 
 class ChatGPT:
     def __init__(self, role) -> None:
@@ -15,6 +15,8 @@ class ChatGPT:
         model="gpt-3.5-turbo",
         messages=self.Messages
         )
+
+        
         self.Messages.append({"role": "assistant", "content": responce["choices"][0]["message"]["content"]})
 
         return responce["choices"][0]["message"]["content"]
