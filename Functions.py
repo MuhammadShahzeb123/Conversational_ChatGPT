@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = "YOU_API_KEY"
 
 class ChatGPT:
     def __init__(self, role) -> None:
