@@ -17,3 +17,5 @@ while True:
 
     except KeyboardInterrupt:
         print("\n\nEnter 'quit' to exit")
+
+F.ChatGPT.Saving_Messages()

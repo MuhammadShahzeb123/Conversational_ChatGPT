@@ -1,9 +1,14 @@
 import openai
+import sys
+sys.path.append("../")
+import ChatGPT as gpt
 
-openai.api_key = "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"
+openai.api_key = gpt.key
+
+# openai.api_key = "YOUR_API_KEY"
 
 class ChatGPT:
-    def __init__(self, role) -> None:
+    def __init__(self, role) -> str:
         self.Messages =  [
                 {"role": "system", "content": role}       
             ]
@@ -20,3 +25,9 @@ class ChatGPT:
         self.Messages.append({"role": "assistant", "content": responce["choices"][0]["message"]["content"]})
 
         return responce["choices"][0]["message"]["content"]
+    
+    def Saving_Messages(self) -> None:
+        with open("Logs", "a") as log:
+            for Message in self.Messages:
+                log.write(Message)
+            log.close()
