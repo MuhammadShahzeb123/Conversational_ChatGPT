@@ -29,5 +29,6 @@ class ChatGPT:
     def Saving_Messages(self) -> None:
         with open("Logs", "a") as log:
             for Message in self.Messages:
-                log.write(Message)
+                log.write(str(f"{Message}\n"))
+            log.write("\n\n\n")
             log.close()
