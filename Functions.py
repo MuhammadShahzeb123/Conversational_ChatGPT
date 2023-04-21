@@ -8,12 +8,12 @@ openai.api_key = gpt.key
 # openai.api_key = "YOUR_API_KEY"
 
 class ChatGPT:
-    def __init__(self, role) -> str:
+    def __init__(self, role) -> None:
         self.Messages =  [
                 {"role": "system", "content": role}       
             ]
     
-    def ask(self, Q):
+    def ask(self, Q: str) -> str:
         self.Messages.append({"role": "user", "content": Q})
         
         responce = openai.ChatCompletion.create(
