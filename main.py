@@ -1,7 +1,7 @@
 import Functions as F
 from time import sleep
 
-role = input("Enter a role")
+role = input("Enter a role: ")
 ZarZebGPT = F.ChatGPT(role)
 while True:
     try:
@@ -12,12 +12,10 @@ while True:
         Answer = "ChatGPT: " + Answer
         for char in Answer:
             print(char, end="", flush=True)
-            sleep(0.05)
+            sleep(0.01)
         print("\n")
-
-        print("GoodBye!")
-
     except KeyboardInterrupt:
         print("\n\nEnter 'quit' to exit")
 
+print("GoodBye!")
 ZarZebGPT.Saving_Messages()
